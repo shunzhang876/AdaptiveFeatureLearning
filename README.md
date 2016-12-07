@@ -55,7 +55,9 @@ If you find the code and pre-trained models useful in your research, please cons
 
 ### Usage
 
-Directly run the script `run_Tara_example.sh`. Or run the following commands step by step:
+Directly run the script `run_Tara_example.sh`. 
+
+Or run the following commands step by step:
 
 1. Mine constraints:
 
