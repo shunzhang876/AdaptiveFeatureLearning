@@ -2,7 +2,8 @@
 
 This is the research code for the paper:
 
-[Shun Zhang](http://shunzhang.me.pn/), [Yihong Gong](http://gr.xjtu.edu.cn/web/ygong/home), [Jia-Bin Huang](https://filebox.ece.vt.edu/~jbhuang/), [Jongwoo Lim](https://filebox.ece.vt.edu/~jbhuang/), [Jinjun Wang](http://gr.xjtu.edu.cn/web/jinjun/english), [Narendra Ahuja](http://vision.ai.illinois.edu/ahuja.html) and [Ming-Hsuan Yang](http://faculty.ucmerced.edu/mhyang/). "Tracking Persons-of-Interest via Adaptive Discriminative Features", in Proceedings of European Conference on Computer Vision (ECCV), 2016.
+[Shun Zhang](http://shunzhang.me.pn/), [Yihong Gong](http://gr.xjtu.edu.cn/web/ygong/home), [Jia-Bin Huang](https://filebox.ece.vt.edu/~jbhuang/), [Jongwoo Lim](https://filebox.ece.vt.edu/~jbhuang/), [Jinjun Wang](http://gr.xjtu.edu.cn/web/jinjun/english), [Narendra Ahuja](http://vision.ai.illinois.edu/ahuja.html) and [Ming-Hsuan Yang](http://faculty.ucmerced.edu/mhyang/). 
+"Tracking Persons-of-Interest via Adaptive Discriminative Features", in Proceedings of European Conference on Computer Vision (ECCV), 2016.
 
 We take the T-ara sequence as an example to evaluate our adaptive feature learning approach in this code. Our learned model on the T-ara sequence can be found here:
 
@@ -24,9 +25,20 @@ If you find the code and pre-trained models useful in your research, please cons
             
 ### System Requirements
 
-- MATLAB (tested with R2014a on 64-bit Linux)
+- MATLAB (tested with R2014b on 64-bit Linux)
 - Caffe
 
 ### Installation
 
-1. Download and unzip the project code. Unzip `features.zip` which is used to extract Fisher Vectors. 
+1. Download and unzip the project code.
+
+
+3. Install Caffe. Please follow the [Caffe installation instructions](http://caffe.berkeleyvision.org/installation.html) to install dependencies and then compile Caffe:
+
+ ```
+ # We call the root directory of the project code `FL_ROOT`.
+cd $FL_ROOT/caffe
+make all -j8
+make pycaffe
+make matcaffe
+```
