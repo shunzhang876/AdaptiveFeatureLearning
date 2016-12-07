@@ -32,13 +32,57 @@ If you find the code and pre-trained models useful in your research, please cons
 
 1. Download and unzip the project code.
 
+2. Install Caffe. Please follow the [Caffe installation instructions](http://caffe.berkeleyvision.org/installation.html) to install dependencies and then compile Caffe:
 
-3. Install Caffe. Please follow the [Caffe installation instructions](http://caffe.berkeleyvision.org/installation.html) to install dependencies and then compile Caffe:
+	```
+	# We call the root directory of the project code `AFL_ROOT`.
+	cd $AFL_ROOT/external/caffe-Triplet-New
+	make all -j8
+	make pycaffe
+	make matcaffe
+	```
+	
+3. Download the T-ara images and extract all images into `AFL/data`.
 
- ```
- # We call the root directory of the project code `FL_ROOT`.
-cd $FL_ROOT/caffe
-make all -j8
-make pycaffe
-make matcaffe
-```
+4. Download the AlexNet model:
+
+	```
+	cd $AFL_ROOT/external/caffe-Triplet-New
+	scripts/download_model_binary.py models/bvlc_reference_caffenet
+	```
+	
+5. Download the [VGG-Face Model](http://www.robots.ox.ac.uk/~vgg/software/vgg_face/src/vgg_face_caffe.tar.gz) and put it in `$AFL_ROOT/external/caffe-Triplet-New/models/VGG`. Download the [pre-trained face model]() and put it in `$AFL_ROOT/external/caffe-Triplet-New/models/pretrained_web_face`.
+
+### Usage
+
+Directly run the script `run_Tara_example.sh`. Or run the following commands step by step:
+
+1. Mine constraints:
+
+	```
+	cd $AFL_ROOT
+	# Start MATLAB
+	matlab
+	>> genTracklet('Tara')
+	```
+
+2. Learn adaptive discriminative features:
+
+	```
+	cd $AFL_ROOT
+	sh shell_scripts/Tara/adapt_Triplet.sh
+	```
+	
+3. Extract features:
+
+	```
+	sh shell_scripts/Tara/extract_All_Feas.sh
+	```
+	
+4. Perform hierarchical agglomerative clustering algorithm:
+
+	```
+	matlab
+	>> clustering_tracklets(‘Tara')
+	```
+	
