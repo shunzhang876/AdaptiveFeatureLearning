@@ -5,9 +5,7 @@ This is the research code for the paper:
 [Shun Zhang](http://shunzhang.me.pn/), [Yihong Gong](http://gr.xjtu.edu.cn/web/ygong/home), [Jia-Bin Huang](https://filebox.ece.vt.edu/~jbhuang/), [Jongwoo Lim](https://filebox.ece.vt.edu/~jbhuang/), [Jinjun Wang](http://gr.xjtu.edu.cn/web/jinjun/english), [Narendra Ahuja](http://vision.ai.illinois.edu/ahuja.html) and [Ming-Hsuan Yang](http://faculty.ucmerced.edu/mhyang/). 
 "Tracking Persons-of-Interest via Adaptive Discriminative Features", in Proceedings of European Conference on Computer Vision (ECCV), 2016.
 
-We take the T-ara sequence as an example to evaluate our adaptive feature learning approach in this code. Our learned model on the T-ara sequence can be found here:
-
-[T-ara_model]()
+We take the T-ara sequence as an example to evaluate our adaptive feature learning approach in this code. Our project website can be found here:
 
 [Project page](http://shunzhang.me.pn/papers/eccv2016/)
 
@@ -42,7 +40,7 @@ If you find the code and pre-trained models useful in your research, please cons
 	make matcaffe
 	```
 	
-3. Download the T-ara images and extract all images into `AFL/data`.
+3. Download the [T-ara images](http://pan.baidu.com/s/1pKN3atX) and extract all images into `AFL/data/Tara`.
 
 4. Download the AlexNet model:
 
@@ -51,7 +49,7 @@ If you find the code and pre-trained models useful in your research, please cons
 	scripts/download_model_binary.py models/bvlc_reference_caffenet
 	```
 	
-5. Download the [VGG-Face Model](http://www.robots.ox.ac.uk/~vgg/software/vgg_face/src/vgg_face_caffe.tar.gz) and put it in `$AFL_ROOT/external/caffe-Triplet-New/models/VGG`. Download the [pre-trained face model]() and put it in `$AFL_ROOT/external/caffe-Triplet-New/models/pretrained_web_face`.
+5. Download the [VGG-Face Model](http://www.robots.ox.ac.uk/~vgg/software/vgg_face/src/vgg_face_caffe.tar.gz) and put it in `$AFL_ROOT/external/caffe-Triplet-New/models/VGG`. Download the [pre-trained face model](http://pan.baidu.com/s/1miudkKg) and put it in `$AFL_ROOT/external/caffe-Triplet-New/models/pretrained_web_face`.
 
 ### Usage
 
@@ -81,10 +79,16 @@ Or run the following commands step by step:
 	sh shell_scripts/Tara/extract_All_Feas.sh
 	```
 	
-4. Perform hierarchical agglomerative clustering algorithm:
+4. Perform hierarchical agglomerative clustering algorithm (you can get the Fig. 6(a) in our [supplementary materials](https://www.dropbox.com/s/zl01oxp3ce0ygqt/FaceTracking_ECCV_2016.pdf?dl=0)):
 
 	```
 	matlab
-	>> clustering_tracklets(‘Tara')
+	>> clustering_tracklets('Tara')
 	```
 	
+5. Perform a simple multi-face tracking:
+
+	```
+	matlab
+	>> facetracking('Tara')
+	```
