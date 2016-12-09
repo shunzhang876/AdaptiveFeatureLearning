@@ -79,7 +79,7 @@ Or run the following commands step by step:
 	sh shell_scripts/Tara/extract_All_Feas.sh
 	```
 	
-4. Perform hierarchical agglomerative clustering algorithm (you can get the Fig. 6(a) in our [supplementary materials](https://www.dropbox.com/s/zl01oxp3ce0ygqt/FaceTracking_ECCV_2016.pdf?dl=0)):
+4. Perform hierarchical agglomerative clustering algorithm (you can get Fig. 6(a) in our [supplementary materials](https://www.dropbox.com/s/zl01oxp3ce0ygqt/FaceTracking_ECCV_2016.pdf?dl=0)):
 
 	```
 	matlab
