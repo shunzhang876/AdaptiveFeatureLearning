@@ -1,0 +1,173 @@
+name: "personReIDTriplet"
+input:"person"
+input_dim:10
+input_dim:3
+input_dim:230
+input_dim:80
+
+layer {
+  name: "conv1"
+  type: "Convolution"
+  bottom: "person"
+  top: "conv1"
+  convolution_param {
+    num_output: 32
+    kernel_size: 5
+    stride: 2 
+  }
+}
+
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "conv1"
+  top: "conv1"
+}
+
+layer {
+  name: "pool1"
+  type: "Pooling"
+  bottom: "conv1"
+  top: "pool1"
+  pooling_param {
+    pool: MAX
+    kernel_size: 3
+    stride: 3
+  }
+}
+
+layer {
+  name: "conv2"
+  type: "Convolution"
+  bottom: "pool1"
+  top: "conv2"
+  convolution_param {
+    num_output: 32
+    kernel_size: 5
+    stride: 1
+  }
+}
+
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "conv2"
+  top: "conv2"
+}
+
+layer {
+  name: "pool2"
+  type: "Pooling"
+  bottom: "conv2"
+  top: "pool2"
+  pooling_param {
+    pool: MAX
+    kernel_size: 3
+    stride: 3
+  }
+}
+
+layer {
+  name: "fc_7_triplet"
+  type: "InnerProduct"
+  bottom: "pool2"
+  top: "fc_7_triplet"
+  inner_product_param {
+    num_output: 400
+  }
+}
+
+layer{
+  name: "personplit"
+  type: "PS"
+  top: "lt"
+  top: "rt"
+  bottom: "conv1"
+}
+
+layer {
+  name: "conv21"
+  type: "Convolution"
+  bottom: "lt"
+  top: "conv21"
+  convolution_param {
+    num_output: 32
+    kernel_size: 3
+    stride: 1
+  }
+}
+
+layer {
+  name: "relu21"
+  type: "ReLU"
+  bottom: "conv21"
+  top: "conv21"
+}
+
+layer {
+  name: "fc_7_triplet_p1"
+  type: "InnerProduct"
+  bottom: "conv21"
+  top: "fc_7_triplet_p1"
+  inner_product_param {
+    num_output: 200
+  }
+}
+
+layer {
+  name: "conv22"
+  type: "Convolution"
+  bottom: "rt"
+  top: "conv22"
+  convolution_param {
+    num_output: 32
+    kernel_size: 3
+    stride: 1
+  }
+}
+
+layer {
+  name: "relu22"
+  type: "ReLU"
+  bottom: "conv22"
+  top: "conv22"
+}
+
+layer {
+  name: "fc_7_triplet_p2"
+  type: "InnerProduct"
+  bottom: "conv22"
+  top: "fc_7_triplet_p2"
+  inner_product_param {
+    num_output: 200
+  }
+}
+
+layer {
+  name: "concat"
+  type: "Concat"
+  bottom: "fc_7_triplet"
+  bottom: "fc_7_triplet_p1"
+  bottom: "fc_7_triplet_p2"
+  top: "concat"
+  concat_param {
+    concat_dim: 1
+  }
+}
+
+layer {
+  name: "ReLUnorm"
+  type: "ReLU"
+  bottom: "concat"
+  top: "concat"
+}
+
+layer {
+  name: "fc_8_triplet"
+  type: "InnerProduct"
+  bottom: "concat"
+  top: "fc_8_triplet"
+  inner_product_param {
+    num_output: 400
+  }
+}
