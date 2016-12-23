@@ -49,5 +49,6 @@ for i=1:length(bbs)
             j+InitFrame,floor(x),floor(y),floor(width),floor(height),obser);
     end;
     fprintf(fid,'	</Trajectory>\n');
+end
 fprintf(fid,'</Video>');
 fclose(fid);
