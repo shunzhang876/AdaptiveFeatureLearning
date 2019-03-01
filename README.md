@@ -7,7 +7,7 @@ This is the research code for the paper:
 
 We take the T-ara sequence as an example to evaluate our adaptive feature learning approach in this code. Our project website can be found here:
 
-[Project page](https://sites.google.com/site/shunzhang876/eccv16_facetracking)
+[Project page](https://sites.google.com/site/shunzhang876/eccv16_facetracking/)
 
 ### Citation
 
