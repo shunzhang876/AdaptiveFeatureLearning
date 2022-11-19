@@ -2,12 +2,12 @@
 
 This is the research code for the paper:
 
-[Shun Zhang](https://sites.google.com/site/shunzhang876/), [Yihong Gong](http://gr.xjtu.edu.cn/web/ygong/home), [Jia-Bin Huang](https://filebox.ece.vt.edu/~jbhuang/), [Jongwoo Lim](https://filebox.ece.vt.edu/~jbhuang/), [Jinjun Wang](http://gr.xjtu.edu.cn/web/jinjun/english), [Narendra Ahuja](http://vision.ai.illinois.edu/ahuja.html) and [Ming-Hsuan Yang](http://faculty.ucmerced.edu/mhyang/). 
+[Shun Zhang](https://teacher.nwpu.edu.cn/shunzhang.html), [Yihong Gong](http://gr.xjtu.edu.cn/web/ygong/home), [Jia-Bin Huang](https://filebox.ece.vt.edu/~jbhuang/), [Jongwoo Lim](https://filebox.ece.vt.edu/~jbhuang/), [Jinjun Wang](http://gr.xjtu.edu.cn/web/jinjun/english), [Narendra Ahuja](http://vision.ai.illinois.edu/ahuja.html) and [Ming-Hsuan Yang](http://faculty.ucmerced.edu/mhyang/). 
 "Tracking Persons-of-Interest via Adaptive Discriminative Features", in Proceedings of European Conference on Computer Vision (ECCV), 2016.
 
 We take the T-ara sequence as an example to evaluate our adaptive feature learning approach in this code. Our project website can be found here:
 
-[Project page](https://sites.google.com/site/shunzhang876/eccv16_facetracking/)
+[Project page](https://sites.google.com/site/shunzhang876/eccv16-face-tracking)
 
 ### Citation
 
